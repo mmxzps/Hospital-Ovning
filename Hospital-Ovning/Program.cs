@@ -76,7 +76,7 @@ namespace Hospital_Ovning
             {
                 if (Proffession == "Doctor")
                 {
-                    Console.WriteLine($"Name:{Name} \nProffession:{Proffession} \nSalary:{Salary} \nShift:{Shift}");
+                    Console.WriteLine($"Name:{Name} \nProffession:{Proffession} \nSalary:{Salary:C} \nShift:{Shift}");
                 }
                 else if (Proffession == "Nurse")
                 {
@@ -88,14 +88,6 @@ namespace Hospital_Ovning
         //Doctor Class
         internal class Doctor: HospitalEmployee
         {
-            public Doctor(string name, string gender, int age) : base(name, gender, age)
-            {
-            }
-
-            public Doctor(string name, string gender, int age, string proffession, int salary, string shift) : base(name, gender, age, proffession, salary, shift)
-            {
-            }
-
             public string Speciality { get; set; }
             public Doctor(string name, string gender, int age, string proffession, int salary, string shift, string speciality) : base(name, gender, age, proffession, salary, shift)
             {
@@ -111,10 +103,6 @@ namespace Hospital_Ovning
         //Nurse Class
         internal class Nurse : HospitalEmployee
         {
-            public Nurse(string name, string gender, int age) : base(name, gender, age)
-            {
-            }
-
             public Nurse(string name, string gender, int age, string proffession, int salary, string shift) : base(name, gender, age, proffession, salary, shift)
             {
             }
@@ -128,9 +116,6 @@ namespace Hospital_Ovning
         //Patience Class
         internal class Patient : Person
         {
-            public Patient(string name, string gender, int age) : base(name, gender, age)
-            {
-            }
 
             public string Diagnosis { get; set; }
             public string AppointmentTime { get; set; }
@@ -142,6 +127,7 @@ namespace Hospital_Ovning
                 AppointmentTime = appointmentTime;
                 //Prescription = presciption;
             }
+            //overrride
             public Patient(string name, string gender, int age, string diagnosis, string appointmentTime, string presciption) : base(name, gender, age)
             {
                 Diagnosis = diagnosis;
